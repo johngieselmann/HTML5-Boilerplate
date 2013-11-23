@@ -13,7 +13,7 @@ Location:  Denver, CO
 
 /* THANKS */
 
-<name> -- <reason>
+HTML5 Boilerplate -- http://html5boilerplate.com
 
         [...]
 
