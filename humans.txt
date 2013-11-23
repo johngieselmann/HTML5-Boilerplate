@@ -1,15 +1,25 @@
 # humanstxt.org/
-# The humans responsible & technology colophon
+# The humans responsible for this beast.
 
-# TEAM
+/* TEAM */
 
-    <name> -- <role> -- <twitter>
+Developer: John Gieselmann
+Site:      johngieselmann.com
+Email:     john.gieselmann@gmail.com
+Location:  Denver, CO
 
-# THANKS
 
-    <name>
+        [...]
 
-# TECHNOLOGY COLOPHON
+/* THANKS */
 
-    HTML5, CSS3
-    Normalize.css, jQuery, Modernizr
+<name> -- <reason>
+
+        [...]
+
+/* SITE */
+
+Last Update: <date>
+Standards:   HTML5, CSS3
+Components:  jQuery, Modernizr
+Software:    <software>
