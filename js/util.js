@@ -1,49 +1,65 @@
 /**
- * A utility object literal class that (gasp) is in the global scope. It 
+ * Assign some utilities to the window that can be accessed as needed. It
  * contains some common checks and actions I like to use without relying 
  * on plugins.
  *
  * @author JohnG <john.gieselmann@gmail.com>
  */
-var jgUtil = {
+(function(window, document, undefined) {
 
-    // browser checks
-    isOpera: win.opera && opera.buildNumber,
+    function jgUtil() {
+        var self = this;
 
-    isWebKit: /WebKit/.test(ua),
+        // the navigator and user agent
+        this.na = window.navigator;
+        this.ua = self.na.userAgent;
 
-    isIE: !jgUtil.isWebKit && !jgUtil.isOpera && (/MSIE/gi).test(ua) 
-        && (/Explorer/gi).test(na.appName),
+        /**
+         * Browser and device checks
+         */
+        this.isOpera = window.opera && opera.buildNumber
+            ? true : false;
 
-    isIE6: jgUtil.isIE && /MSIE [56]/.test(ua),
+        this.isWebkit = /WebKit/.test(self.ua);
 
-    isIE7: jgUtil.isIE && /MSIE [7]/.test(ua),
+        this.isIE = !self.isWebKit && !self.isOpera 
+            && (/MSIE/gi).test(self.ua) 
+            && (/Explorer/gi).test(self.na.appName);
 
-    isIE8: jgUtil.isIE && /MSIE [8]/.test(ua),
+        this.isIE6 = self.isIE && /MSIE [56]/.test(self.ua);
 
-    isIE9: jgUtil.isIE && /MSIE [9]/.test(ua),
+        this.isIE7 = self.isIE && /MSIE [7]/.test(self.ua);
 
-    isGecko: !jgUtil.isWebKit && /Gecko/.test(ua),
+        this.isIE8 = self.isIE && /MSIE [8]/.test(self.ua);
 
-    isMac: ua.indexOf('Mac') != -1,
+        this.isIE9 = self.isIE && /MSIE [9]/.test(self.ua);
 
-    isAir: /adobeair/i.test(ua),
+        this.isGecko = !self.isWebKit && /Gecko/.test(self.ua);
 
-    isIDevice: /(iPad|iPhone)/.test(ua),
+        this.isMac = self.ua.indexOf('Mac') != -1;
 
-    isIOS5: jgUtil.isIDevice && ua.match(/AppleWebKit\/(\d*)/)[1]>=534
+        this.isAir = /adobeair/i.test(self.ua);
 
-};
+        this.isIDevice = /(iPad|iPhone|iPod)/.test(self.ua);
 
-/**
- * No console log?? No problem.
- *
- * @author JohnG <john.gieselmann@gmail.com>
- */
-if (typeof console === undefined) {
-    var console = {
-        log:   function(input) { alert("THIS BROWSER HAS NO CONSOLE"); }
-        warn:  function(){}
-        error: function(){}
-    };
-}
+        this.isIOS5 = self.isIDevice && self.ua.match(/AppleWebKit\/(\d*)/)[1]>=534
+
+    }
+
+    // assign the class to the window
+    window.jgUtil = jgUtil;
+
+    /**
+     * No console log?? No problem.
+     *
+     * @author JohnG <john.gieselmann@gmail.com>
+     */
+    if (typeof window.console === undefined) {
+        window.console = {
+            log:   function(input) { alert("THIS BROWSER HAS NO CONSOLE"); },
+            warn:  function() {},
+            error: function() {}
+        };
+    }
+
+})(window, document, undefined);

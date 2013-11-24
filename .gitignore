@@ -1,1 +1,4 @@
 # Ignore me please :)
+*.swp
+js/*.swp
+css/*.swp
