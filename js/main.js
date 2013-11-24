@@ -39,4 +39,4 @@
 //    var app = new AppClass();
 //    app.init();
 
- })();
+ })(window, document, $, undefined);
