@@ -96,9 +96,9 @@ file synchronously loaded at the top of the document.
 
 ## The content area
 
-The central part of the boilerplate template is pretty much empty. This is
-intentional, in order to make the boilerplate suitable for both web page and
-web app development.
+The central part of the boilerplate template contains empty header, main,
+section, and footer tags with namespaced classes. Feel free to use or delete
+them, but most HTML pages are likely to use them in some form or fashion.
 
 ### BrowseHappy Prompt
 

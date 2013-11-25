@@ -5,25 +5,31 @@ table of contents](TOC.md)
 
 The HTML5 Boilerplate starting CSS includes:
 
-* [Normalize.css](https://github.com/necolas/normalize.css).
-* Useful HTML5 Boilerplate defaults.
-* Common helpers.
-* Placeholder media queries.
-* Print styles.
+* Reset CSS
+    * [Normalize.css](https://github.com/necolas/normalize.css).
+    * Useful HTML5 Boilerplate defaults.
+    * Common helpers.
+    * Box model resets borrowed from [Meyerweb.com](http://meyerweb.com/eric/tools/css/reset/)
+* Main CSS
+    * Basic structures and comments. [Idiomatic CSS](https://github.com/necolas/idiomatic-css)
+    * Placeholder media queries.
+    * Print styles.
 
 This starting CSS does not rely on the presence of conditional classnames,
 conditional style sheets, or Modernizr. It is ready to use whatever your
 development preferences happen to be.
 
 
-## Normalize.css
+## Reset CSS
+
+### Normalize.css
 
 Normalize.css is a modern, HTML5-ready alternative to CSS resets. It contains
 extensive inline documentation. Please refer to the [Normalize.css
 project](http://necolas.github.com/normalize.css/) for more information.
 
 
-## HTML5 Boilerplate defaults
+### HTML5 Boilerplate defaults
 
 This project includes a handful of base styles that build upon Normalize.css.
 These include:
@@ -36,7 +42,7 @@ These include:
 You are free to modify or add to these base styles as your project requires.
 
 
-## Common helpers
+### Common helpers
 
 #### `.hidden`
 
@@ -73,7 +79,9 @@ children, but the HTML5 Boilerplate currently uses the [micro
 clearfix](http://nicolasgallagher.com/micro-clearfix-hack/).
 
 
-## Media Queries
+## Main CSS
+
+### Media Queries
 
 The boilerplate makes it easy to get started with a "Mobile First" and
 [Responsive Web
@@ -96,7 +104,7 @@ Boilerplate](https://github.com/h5bp/mobile-boilerplate) for features that are
 useful when developing mobile web apps.
 
 
-## Print styles
+### Print styles
 
 * Print styles are inlined to [reduce the number of page
   requests](http://www.phpied.com/delay-loading-your-print-css/).
@@ -110,7 +118,7 @@ useful when developing mobile web apps.
 * But we do not want to show link text for image replaced elements (given that
   they are primarily images).
 
-### Paged media styles
+#### Paged media styles
 
 * Paged media is supported only in a [few
   browsers](http://en.wikipedia.org/wiki/Comparison_of_layout_engines_%28Cascading_Style_Sheets%29#Grammar_and_rules).

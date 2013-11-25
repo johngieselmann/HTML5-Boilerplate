@@ -9,6 +9,10 @@
     // bring in the utility
     var u = window.jgUtil;
 
+    // keep track of some common jq objects
+    $win = $(window);
+    $body = $("body");
+
 //    /**
 //     * Object literal class.
 //     *

@@ -5,12 +5,19 @@ table of contents](TOC.md)
 
 Information about the default JavaScript included in the project.
 
+## util.js
+
+This file assigns a utility class to the window so it can be accessed in
+the main.js file or others you choose to add. It contains some common checks
+and actions.
+
 ## main.js
 
-This file can be used to contain or reference your site/app JavaScript code.
-For larger projects, you can make use of a JavaScript module loader, like
-[Require.js](http://requirejs.org/), to load any other scripts you need to
-run.
+This file sets up a self-executing, anonymous function that contains two 
+flavors of empty JavaScript classes that are commented out:
+
+* Object-literal
+* Function
 
 ## plugins.js
 
