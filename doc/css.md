@@ -89,10 +89,12 @@ Design](http://www.alistapart.com/articles/responsive-web-design/) approach to
 development. But it's worth remembering that there are [no silver
 bullets](http://www.cloudfour.com/css-media-query-for-mobile-is-fools-gold/).
 
-We include a placeholder Media Queries to build up your mobile styles for wider
-viewports and high-resolution displays. It's recommended that you adapt these
-Media Queries based on the content of your site rather than mirroring the fixed
-dimensions of specific devices.
+I have included some baseline media queries based on some current common
+device widths; however, they are primarily there as a reminder of possible
+needed breakpoints.
+
+It's recommended that you adapt these Media Queries based on the content of 
+your site rather than mirroring the fixed dimensions of specific devices.
 
 If you do not want to take a "Mobile First" approach, you can simply edit or
 remove these placeholder Media Queries. One possibility would be to work from
