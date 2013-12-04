@@ -13,6 +13,9 @@
     $win = $(window);
     $body = $("body");
 
+    // insert the copyright year
+    $(".js-copyright-year").text(new Date().getFullYear());
+
 //    /**
 //     * Object literal class.
 //     *
