@@ -1,3 +1,3 @@
-# HTML5 Boilerplate
+# Website Template
 
-This is my personal boilerplate derived from THE [HTML5 Boilerplate](http://html5boilerplate.com)
+This is my HTML website template derived from THE [HTML5 Boilerplate](http://html5boilerplate.com)
