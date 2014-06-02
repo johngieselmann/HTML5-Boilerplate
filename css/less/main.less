@@ -1,4 +1,5 @@
 // LESS Main Stylsheet
+@import "mixins";
 @import "colors";
 
 // Set up some simple font defaults
@@ -59,51 +60,51 @@ a:visited {
    ========================================================================== */
 
 /**
- * iPad landscape width
+ * iPhone <5 portrait width
  */
-@media only screen and (max-width: 1024px) {
-
-}
-
-/**
- * Good desktop width
- */
-@media only screen and (max-width: 960px) {
-
-}
-
-/**
- * iPad portrait width
- */
-@media only screen and (max-width: 768px) {
-
-}
-
-/**
- * Medium mobile for good measure
- */
-@media only screen and (max-width: 600px) {
-
-}
-
-/**
- * iPhone 5 landscape width
- */
-@media only screen and (max-width: 568px) {
+@media only screen and (min-width: 320px) {
 
 }
 
 /**
  * iPhone <5 landscape width
  */
-@media only screen and (max-width: 480px) {
+@media only screen and (min-width: 480px) {
 
 }
 
 /**
- * iPhone <5 portrait width
+ * iPhone 5 landscape width
  */
-@media only screen and (max-width: 320px) {
+@media only screen and (min-width: 568px) {
+
+}
+
+/**
+ * Medium mobile for good measure
+ */
+@media only screen and (min-width: 600px) {
+
+}
+
+/**
+ * iPad portrait width
+ */
+@media only screen and (min-width: 768px) {
+
+}
+
+/**
+ * Good desktop width
+ */
+@media only screen and (min-width: 960px) {
+
+}
+
+/**
+ * iPad landscape width
+ */
+@media only screen and (min-width: 1024px) {
 
 }
 
