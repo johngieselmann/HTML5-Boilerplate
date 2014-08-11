@@ -11,6 +11,12 @@
     -webkit-backface-visibility: @backface;
 }
 
+.transform(@transform) {
+    -webkit-transform: @transform;
+    -mz-transform: @transform;
+    transform: @transform;
+}
+
 .twoStageAnim(@prop, @1, @2) {
     0% {
         @prop: @1;
@@ -87,6 +93,23 @@
     border-bottom-left-radius: @bl;
 }
 
+.circle() {
+    -webkit-border-top-left-radius: 50%;
+    -webkit-border-top-right-radius: 50%;
+    -webkit-border-bottom-right-radius: 50%;
+    -webkit-border-bottom-left-radius: 50%;
+
+    -moz-border-radius-topleft: 50%;
+    -moz-border-radius-topright: 50%;
+    -moz-border-radius-bottomright: 50%;
+    -moz-border-radius-bottomleft: 50%;
+
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+}
+
 .gradient(@top, @bottom) {
     background: @top;
     background: -moz-linear-gradient(top,  @top 0%, @bottom 100%);
@@ -96,4 +119,12 @@
     background: -ms-linear-gradient(top,  @top 0%,@bottom 100%);
     background: linear-gradient(to bottom,  @top 0%,@bottom 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='@top', endColorstr='@bottom',GradientType=0 );
+}
+
+.blurFilter(@blur: 5px) {
+    -webkit-filter: blur(@blur);
+    -moz-filter: blur(@blur);
+    -o-filter: blur(@blur);
+    -ms-filter: blur(@blur);
+    filter: blur(@blur);
 }
