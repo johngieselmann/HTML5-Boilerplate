@@ -4,17 +4,11 @@
  *
  * @author JohnG <john.gieselmann@gmail.com>
  */
- (function(window, document, $, undefined) {
-
-    // bring in the utility
-    var u = window.jgUtil;
+ (function(window, document, undefined, $) {
 
     // keep track of some common jq objects
     $win = $(window);
     $body = $("body");
-
-    // insert the copyright year
-    $(".js-copyright-year").text(new Date().getFullYear());
 
 //    /**
 //     * Object literal class.
@@ -46,4 +40,4 @@
 //    var app = new AppClass();
 //    app.init();
 
- })(window, document, $, undefined);
+ })(window, document, undefined, jQuery);
