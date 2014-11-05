@@ -1,12 +1,12 @@
 // LESS CSS MIXINS
 
 // ANIMATIONS, TRANSFORMS, AND TRANSITIONS
-.transition(@prop: all, @time: 500ms, @backface: hidden) {
-    -webkit-transition: @prop @time ease-in;
-    -moz-transition: @prop @time ease-in;
-    -ms-transition: @prop @time ease-in;
-    -o-transition: @prop @time ease-in;
-    transition: @prop @time ease-in;
+.transition(@prop: all, @time: 300ms, @func: ease-in, @backface: hidden) {
+    -webkit-transition: @prop @time @func;
+    -moz-transition: @prop @time @func;
+    -ms-transition: @prop @time @func;
+    -o-transition: @prop @time @func;
+    transition: @prop @time @func;
 
     -webkit-backface-visibility: @backface;
 }
@@ -26,7 +26,7 @@
     }
 }
 
-.animation(@name, @dur: 500ms, @iter: infinite) {
+.animation(@name, @dur: 300ms, @iter: infinite) {
     animation-name: @name;
     animation-duration: @dur;
     animation-iteration-count: @iter;
