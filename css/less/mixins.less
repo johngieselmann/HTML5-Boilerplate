@@ -76,7 +76,13 @@
     box-shadow: @first, @second;
 }
 
-.borderRadius(@tl: 5px, @tr: 5px, @br: 5px, @bl: 5px) {
+.borderRadius(@radius: 5px) {
+    -webkit-border-radius: @radius;
+    -moz-border-radius: @radius;
+    border-radius: @radius;
+}
+
+.borderRadiusLong(@tl: 5px, @tr: 5px, @br: 5px, @bl: 5px) {
     -webkit-border-top-left-radius: @tl;
     -webkit-border-top-right-radius: @tr;
     -webkit-border-bottom-right-radius: @br;
