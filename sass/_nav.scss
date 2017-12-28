@@ -1,0 +1,289 @@
+// ------------------------------------
+// Nav
+// ------------------------------------
+
+.nav {
+  position: fixed;
+  z-index: 101;
+  left: -$nav-width-open;
+  width: $nav-width-open;
+  height: 100%;
+
+  background: $brand-dark;
+  color: $white;
+
+  @include transition(left $nav-trans-speed $nav-trans-timing);
+
+  @include respond-to($nav-break-sm) {
+    overflow: hidden;
+    left: 0;
+    width: $nav-width-closed;
+    @include transition(width $nav-trans-speed $nav-trans-timing);
+  }
+
+  @include respond-to($nav-break-lg) {
+    width: $nav-width-open;
+  }
+
+  .orgs {
+    position: absolute;
+    z-index: 2;
+    top: $nav-link-height-sm;
+    height: 0px;
+    width: 100%;
+
+    background: lighten($brand-dark, 5%);
+    overflow: hidden;
+
+    @include transition($transition-base);
+
+    @include respond-to($nav-break-sm) {
+      top: $nav-link-height-lg * 2;
+    }
+
+    @include respond-to($nav-break-lg) {
+      top: $nav-link-height-lg;
+    }
+
+    &.active {
+      height: calc(100% - #{$nav-link-height-sm});
+
+      @include respond-to($nav-break-sm) {
+        height: calc(100% - #{$nav-link-height-lg});
+      }
+    }
+  }
+
+  .logo {
+    $logo-margin-lg: ($spacing-padding / 2) + 5px;
+
+    height: $nav-link-height-sm - $spacing-padding;
+    width: $nav-width-open - $spacing-padding;
+    margin: $spacing-padding / 2;
+
+    overflow: hidden;
+
+    @include transition(all $nav-trans-speed $nav-trans-timing);
+
+    @include respond-to($nav-break-sm) {
+      $height-lg: $nav-link-height-lg - $spacing-padding;
+      height: $height-lg;
+      width: 37px;//$nav-link-height-lg - ($spacing-padding * 2);
+      margin-left: $logo-margin-lg;
+      margin-right: $logo-margin-lg;
+      margin-top: $logo-margin-lg;
+      margin-bottom: $nav-link-height-lg - $height-lg - $logo-margin-lg;
+    }
+
+    @include respond-to($nav-break-lg) {
+      width: $nav-width-open - $spacing-padding;
+    }
+
+    img {
+      max-width: $nav-width-open - $spacing-padding;
+      max-height: 100%;
+
+      @include respond-to($nav-break-sm) {
+        max-width: $nav-width-open - ($logo-margin-lg * 2);
+      }
+    }
+  }
+
+  .top {
+//    position: absolute;
+//    top: $nav-link-height-sm;
+//
+//    @include respond-to($nav-break-sm) {
+//      top:  $nav-link-height-lg;
+//    }
+  }
+
+  .bottom {
+    position: absolute;
+    bottom: 0;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+
+    width: $nav-width-open;
+    list-style-type: none;
+
+    > li {
+
+      > a {
+        display: block;
+        height: $nav-link-height-sm;
+        line-height: $nav-link-height-sm;
+
+        font-weight: 100;
+        color: rgba($white, .8);
+        cursor: pointer;
+        overflow: hidden;
+        white-space: nowrap;
+
+        @include clearfix();
+
+        @include transition(all 100ms ease-in);
+
+        @include respond-to($nav-break-sm) {
+          height: $nav-link-height-lg;
+          line-height: $nav-link-height-lg;
+        }
+
+        &:hover,
+        &.active {
+          background: $brand-primary;
+          color: $white;
+        }
+
+        .icon {
+          float: left;
+          width: $nav-link-height-sm;
+
+          font-size: ($nav-link-height-sm / 2);
+          text-align: center;
+
+          @include respond-to($nav-break-sm) {
+            width: $nav-link-height-lg;
+            font-size: ($nav-link-height-lg * .4);
+          }
+        }
+
+        .text {
+          display: block;
+          float: left;
+          width: ($nav-width-open - $nav-link-height-sm);
+
+          overflow: hidden;
+          text-overflow: ellipsis;
+
+          @include respond-to($nav-break-sm) {
+            width: ($nav-width-open - $nav-link-height-lg);
+
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.nav-toggle {
+  position: absolute;
+  width: $header-height-sm;
+  height: $header-height-sm;
+  right: -$header-height-sm;
+
+  overflow: hidden;
+  cursor: pointer;
+  text-align: center;
+  color: $font-color;
+
+  $toggle-transition: left $nav-trans-speed $nav-trans-timing, color 100ms ease-in;
+  @include transition($transition-base);
+
+  @include respond-to($nav-break-sm) {
+    position: relative;
+    right: auto;
+    width: $header-height-lg;
+    height: $header-height-lg;
+    color: $white;
+  }
+
+  @include respond-to($nav-break-lg) {
+//    left: -$header-height-lg;
+    height: 0;
+  }
+
+  @include respond-to(desktop) {
+    &:hover {
+      color: $brand-primary;
+    }
+  }
+
+  i {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: $header-height-sm;
+    padding-top: ($header-height-sm - 30) / 2;
+
+    font-size: 30px;
+
+    @include respond-to($nav-break-sm) {
+      width: $header-height-lg;
+      padding-top: ($header-height-lg - 30) / 2;
+    }
+  }
+
+  .open,
+  .closed {
+    @include transition(opacity $nav-trans-speed $nav-trans-timing);
+  }
+  .closed {
+    opacity: 1;
+  }
+  .open {
+    opacity: 0;
+  }
+}
+
+.nav-overlay {
+  position: fixed;
+  z-index: 99;
+  left: 0;
+  width: 0;
+  height: 100%;
+  opacity: 0;
+
+  background: rgba($brand-dark,.5);
+
+  @include transition(all $nav-trans-speed $nav-trans-timing);
+
+  @include respond-to($nav-break-lg) {
+    opacity: 0 !important;
+    width: 0 !important;
+  }
+}
+
+.nav-open {
+
+  .nav {
+    width: $nav-width-open;
+    left: 0;
+
+    .logo {
+      width: $nav-width-open - $spacing-padding;
+    }
+  }
+
+  .content {
+    left: $nav-width-open;
+  }
+
+  .nav-overlay {
+    opacity: 1;
+    width: 100%;
+  }
+
+  .header {
+    left: $nav-width-open;
+  }
+
+  .nav-toggle {
+    @include respond-to($nav-break-sm) {
+      width: $nav-width-open;
+    }
+
+    .closed {
+      opacity: 0;
+    }
+
+    .open {
+      opacity: 1;
+      color: $brand-primary;
+    }
+  }
+}
