@@ -3,41 +3,7 @@
 // ------------------------------------
 
 .content {
-  position: absolute;
-  top: $header-height-sm;
-  left: 0;
-  right: 0;
-  width: 100%;
-  margin-bottom: 3em;
 
-  @include transition(left $nav-trans-speed $nav-trans-timing);
-
-  @include respond-to($nav-break-sm) {
-    top: $header-height-lg;
-    left: $nav-width-closed;
-    width: calc(100% - #{$nav-width-closed});
-    margin-bottom: 5em;
-
-    @include transition(left $nav-trans-speed $nav-trans-timing);
-  }
-
-  @include respond-to($nav-break-lg) {
-    left: $nav-width-open;
-    width: auto;
-  }
-
-}
-
-.auth {
-  .content {
-    top: $header-height-sm + $spacing-padding;
-    left: 0;
-    width: 100%;
-
-    @include respond-to($nav-break-sm) {
-      top: $header-height-lg + ($spacing-padding * 2);
-    }
-  }
 }
 
 .container {
@@ -88,14 +54,4 @@
 
 .circle {
   @include circle();
-}
-
-.page-title {
-  padding: .7em 0;
-  font-size: 20px;
-
-  @include respond-to(tablet) {
-    padding: 1em 0;
-    font-size: 30px;
-  }
 }
